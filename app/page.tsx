@@ -133,7 +133,7 @@ export default function PhuketCondoLanding() {
 
   const oldN = Number((DETAILS.oldPrice || '').replace(/[^0-9]/g, ''));
   const newN = Number((DETAILS.price || '').replace(/[^0-9]/g, ''));
-  const savingBadge = oldN && newN && oldN > newN ? `-${(oldN - newN).toLocaleString('ru-RU')} ฿` : null;
+  const savingBadge = oldN && newN && oldN > newN ? 'Специальное предложение' : null;
 
   const videoSrc = isDesktop ? `${VIDEO_SRC_BASE}?autoplay=1&mute=${muted ? 1 : 0}` : VIDEO_SRC_BASE;
 
@@ -249,7 +249,7 @@ export default function PhuketCondoLanding() {
           <h3 className="text-lg md:text-xl font-semibold">Описание квартиры</h3>
           <p className="mt-3 text-neutral-700 leading-relaxed text-sm md:text-base">
             Светлая 1-спальная квартира в современном комплексе рядом с пляжем Банг Тао. Идеально подходит для личного проживания и сдачи в аренду.
-            Меблировка включена, техника установлена. <strong>Цена ниже на миллион бат</strong>, чем у застройщика на данном этапе. <span className="ml-2 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-emerald-100 text-emerald-800">−1M ฿ к цене застройщика</span> У комплекса: бассейн, тренажёрный зал, ресепшн, охрана 24/7, парковка.
+            Меблировка включена, техника установлена. <strong>Цена ниже</strong>, чем у застройщика на данном этапе. <span className="ml-2 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-emerald-100 text-emerald-800">специальное предложение от собственника</span> У комплекса: бассейн, тренажёрный зал, ресепшн, охрана 24/7, парковка.
           </p>
           <p className="mt-3 text-neutral-700 leading-relaxed text-sm md:text-base">
             В видео-интервью выше представитель застройщика рассказывает о гарантиях завершения строительства, статусе лицензий и условиях обслуживания.
