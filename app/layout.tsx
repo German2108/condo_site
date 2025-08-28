@@ -5,11 +5,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "OZONE Oasis — квартира на Пхукете от собственника",
   description:
-    "Видео-интервью с застройщиком, 36 м², Банг Тао. Цена 4.33M ฿ (−1M ฿ от застройщика). Фото, контакты, форма заявки.",
+    "Квартира на Пхукете, 36 м², Банг Тао. Цена 4.33M ฿ (−1M ฿ от цены застройщика). Фото, контакты, форма заявки.",
   openGraph: {
     title: "OZONE Oasis — квартира на Пхукете",
     description:
-      "Видео-интервью, фото, 36 м², Банг Тао. Цена 4.33M ฿ (−1M ฿ от застройщика).",
+      "Квартира на Пхукет, фото, 36 м², Банг Тао. Цена 4.33M ฿ (−1M ฿ от цены застройщика).",
     images: ["/images/phuket-living.jpg"],
     type: "website",
     url: "https://phuket-condo.org",
@@ -28,6 +28,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
+     <head>
+       {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17461496470"></script>
+         <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-17461496470');
+         </script>
+       </head>
       <body>{children}</body>
     </html>
   );
