@@ -3,13 +3,13 @@ import { useMemo, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 // YouTube-видео: автозапуск только на десктопе
-const VIDEO_SRC_BASE = "https://www.youtube.com/embed/K1aB22t7OI8";
+const VIDEO_SRC_BASE = "https://youtu.be/j7AxX7XKyHc?si=qKClSOcUg0gj8oRS";
 
 const DETAILS = {
   title: "Квартира от собственника на Пхукете",
   subtitle: "Видео-интервью с представителем застройщика",
   location: "Пхукет, Таиланд (район: Чонг Талай / Банг Тао)",
-  oldPrice: "฿ 5,330,000",
+  oldPrice: "Много денег",
   price: "฿ 4,330,000",
   currency: "THB",
   size: "36м2",
@@ -185,10 +185,10 @@ export default function PhuketCondoLanding() {
             <div className="bg-white rounded-2xl shadow-sm border border-neutral-200 p-5 relative" data-testid="price-card">
               {savingBadge && (
                 <div className="absolute top-2 right-2">
-  <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-emerald-600 text-white shadow-sm">
-    {savingBadge}
-  </span>
-</div>
+                  <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-emerald-600 text-white shadow-sm">
+                  {savingBadge}
+                  </span>
+                 </div>
               )}
               <div className="flex items-baseline justify-between gap-3">
                 <div>
@@ -251,7 +251,7 @@ export default function PhuketCondoLanding() {
           <h3 className="text-lg md:text-xl font-semibold">Описание квартиры</h3>
           <p className="mt-3 text-neutral-700 leading-relaxed text-sm md:text-base">
             Светлая 1-спальная квартира в современном комплексе рядом с пляжем Банг Тао. Идеально подходит для личного проживания и сдачи в аренду.
-            Меблировка включена, техника установлена. <strong>Цена ниже</strong>, чем у застройщика на данном этапе. <span className="ml-2 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-emerald-100 text-emerald-800">специальное предложение от собственника</span> У комплекса: бассейн, тренажёрный зал, ресепшн, охрана 24/7, парковка.
+            Меблировка включена, техника установлена. <strong>Прямой контакт собственника без посредников</strong1>. <span className="ml-2 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-emerald-100 text-emerald-800">специальное предложение от собственника</span> У комплекса: бассейн, тренажёрный зал, ресепшн, охрана 24/7, парковка.
           </p>
           <p className="mt-3 text-neutral-700 leading-relaxed text-sm md:text-base">
             В видео-интервью выше представитель застройщика рассказывает о гарантиях завершения строительства, статусе лицензий и условиях обслуживания.
