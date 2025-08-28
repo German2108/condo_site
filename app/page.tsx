@@ -29,14 +29,14 @@ function toEmbedUrl(input: string): string {
   return input;
 }
 
-// ← твоя новая 6-мин ссылка без манипуляций ценой
+// ← твоя новая 6-мин ссылка без упоминаний цен в начале
 const VIDEO_URL = "https://youtu.be/j7AxX7XKyHc?si=qKClSOcUg0gj8oRS";
 
 const DETAILS = {
   title: "Квартира от собственника на Пхукете",
   subtitle: "Видео-интервью с представителем застройщика",
   location: "Пхукет, Таиланд (район: Чонг Талай / Банг Тао)",
-  oldPrice: "฿ 5,330,000",
+  oldPrice: "", // убрали старую цену
   price: "฿ 4,330,000",
   currency: "THB",
   size: "36м2",
@@ -70,10 +70,7 @@ const CONTACTS = {
 };
 
 const PHOTOS = [
-  {
-    src: "/images/phuket-bathroom.jpg",
-    alt: "Ванная комната — каменная столешница и зеркало",
-  },
+  { src: "/images/phuket-bathroom.jpg", alt: "Ванная комната — каменная столешница и зеркало" },
   { src: "/images/phuket-living.jpg", alt: "Гостиная — диван и выход на балкон" },
   { src: "/images/phuket-bedroom.jpg", alt: "Спальня — кровать и панорамные окна" },
 ];
@@ -159,12 +156,6 @@ export default function PhuketCondoLanding() {
     }),
     []
   );
-
-  // Бейдж — нейтральная формулировка
-  const oldN = Number((DETAILS.oldPrice || "").replace(/[^0-9]/g, ""));
-  const newN = Number((DETAILS.price || "").replace(/[^0-9]/g, ""));
-  const savingBadge =
-    oldN && newN && oldN > newN ? "Предложение от собственника" : null;
 
   // Корректный embed c параметрами (без дублей '?')
   const videoSrc = useMemo(() => {
@@ -281,20 +272,10 @@ export default function PhuketCondoLanding() {
               className="bg-white rounded-2xl shadow-sm border border-neutral-200 p-5 relative"
               data-testid="price-card"
             >
-              {savingBadge && (
-                <div className="absolute top-2 right-2">
-                  <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-emerald-600 text-white shadow-sm">
-                    {savingBadge}
-                  </span>
-                </div>
-              )}
               <div className="flex items-baseline justify-between gap-3">
                 <div>
                   <div className="text-neutral-600 text-sm">{DETAILS.location}</div>
-                  <div className="mt-1 flex items-baseline gap-2">
-                    <span className="text-sm sm:text-lg line-through text-neutral-400">
-                      {DETAILS.oldPrice}
-                    </span>
+                  <div className="mt-1">
                     <span className="text-2xl sm:text-3xl font-extrabold text-emerald-700">
                       {DETAILS.price}
                     </span>
