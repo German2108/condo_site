@@ -1,6 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "OZONE Oasis — квартира на Пхукете от собственника",
@@ -9,8 +10,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "OZONE Oasis — квартира на Пхукете",
     description:
-      "Квартира на Пхукет, фото, 36 м², Банг Тао. Цена 4.33M ฿ (−1M ฿ от цены застройщика).",
-    images: ["/images/phuket-living.jpg"],
+      "Квартира на Пхукете, фото, 36 м², Банг Тао. Цена 4.33M ฿ (−1M ฿ от цены застройщика).",
+    images: ["/images/phuket-bedroom.jpg"],
     type: "website",
     url: "https://phuket-condo.org",
   },
@@ -28,18 +29,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-     <head>
-       {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17461496470"></script>
-         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'AW-17461496470');
-         </script>
-       </head>
+      <head>
+        {/* Google Ads Tag */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17461496470"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17461496470');
+          `}
+        </Script>
+      </head>
       <body>{children}</body>
     </html>
   );
 }
+
