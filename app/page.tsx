@@ -184,9 +184,11 @@ export default function PhuketCondoLanding() {
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }} className="space-y-5">
             <div className="bg-white rounded-2xl shadow-sm border border-neutral-200 p-5 relative" data-testid="price-card">
               {savingBadge && (
-                <div className="absolute top-3 right-3">
-                  <span className="inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold bg-emerald-600 text-white shadow">{savingBadge}</span>
-                </div>
+                <div className="absolute top-2 right-2">
+  <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-emerald-600 text-white shadow-sm">
+    {savingBadge}
+  </span>
+</div>
               )}
               <div className="flex items-baseline justify-between gap-3">
                 <div>
